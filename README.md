@@ -1,6 +1,17 @@
 # CIFAR-10 IMAGE CLASSIFICATION WITH KERAS CONVOLUTIONAL NEURAL NETWORK TUTORIAL
 
+## What is Keras?
 
+''Keras is an open source neural network library written in Python and capable of running on top of either [TensorFlow](https://www.tensorflow.org/), [CNTK](https://github.com/Microsoft/CNTK) or [Theano](http://deeplearning.net/software/theano/). 
+
+Use Keras if you need a deep learning libraty that:
+* Allows for easy and fast prototyping
+* Supports both convolutional networks and recurrent networks, as well as combinations of the two
+* Runs seamlessly on CPU and GPU
+
+Keras is compatible with Python 2.7-3.5''[1].
+
+Since Semptember 2016, Keras is the second-fastest growing Deep Learning framework after Google's Tensorflow, and the third largest after Tensorflow and Caffe[2].
 
 Simple Youtube presentation what type of visualization is generated:
 
@@ -25,10 +36,11 @@ You will learn:
 
 ## Resources
 
-* [Official Keras Documentation](https://keras.io/)
-* [Tutorial by Dr. Jason Brownlee](http://machinelearningmastery.com/object-recognition-convolutional-neural-networks-keras-deep-learning-library/)
-* [Tutorial by Parneet Kaur](http://parneetk.github.io/blog/cnn-cifar10/)
-* [Tutorial by Giuseppe Bonaccorso](https://www.bonaccorso.eu/2016/08/06/cifar-10-image-classification-with-keras-convnet/)
+* 1. [Official Keras Documentation](https://keras.io/)
+* 2. [About Keras on Wikipedia](https://en.wikipedia.org/wiki/Keras)
+* 3. [Tutorial by Dr. Jason Brownlee](http://machinelearningmastery.com/object-recognition-convolutional-neural-networks-keras-deep-learning-library/)
+* 4. [Tutorial by Parneet Kaur](http://parneetk.github.io/blog/cnn-cifar10/)
+* 5. [Tutorial by Giuseppe Bonaccorso](https://www.bonaccorso.eu/2016/08/06/cifar-10-image-classification-with-keras-convnet/)
 
 
 ## Grab the code or run project in online IDE
