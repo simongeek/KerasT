@@ -36,11 +36,11 @@ You will learn:
 
 ## Resources
 
-* 1. [Official Keras Documentation](https://keras.io/)
-* 2. [About Keras on Wikipedia](https://en.wikipedia.org/wiki/Keras)
-* 3. [Tutorial by Dr. Jason Brownlee](http://machinelearningmastery.com/object-recognition-convolutional-neural-networks-keras-deep-learning-library/)
-* 4. [Tutorial by Parneet Kaur](http://parneetk.github.io/blog/cnn-cifar10/)
-* 5. [Tutorial by Giuseppe Bonaccorso](https://www.bonaccorso.eu/2016/08/06/cifar-10-image-classification-with-keras-convnet/)
+1. [Official Keras Documentation](https://keras.io/)
+2. [About Keras on Wikipedia](https://en.wikipedia.org/wiki/Keras)
+3. [Tutorial by Dr. Jason Brownlee](http://machinelearningmastery.com/object-recognition-convolutional-neural-networks-keras-deep-learning-library/)
+4. [Tutorial by Parneet Kaur](http://parneetk.github.io/blog/cnn-cifar10/)
+5. [Tutorial by Giuseppe Bonaccorso](https://www.bonaccorso.eu/2016/08/06/cifar-10-image-classification-with-keras-convnet/)
 
 
 ## Grab the code or run project in online IDE
