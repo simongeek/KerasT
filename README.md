@@ -31,6 +31,9 @@ You will learn:
 * What is Deep Learning
 * How to use ready datasets
 * How to make Convolutional Neural Networks(CNN)
+* What is supervised and unsupervised learning
+* Basics of Machine Learning
+* Introduction to Artificial Intelligence(AI)
 
 
 ## Project structure
