@@ -16,7 +16,7 @@ Since Semptember 2016, Keras is the second-fastest growing Deep Learning framewo
 ## What is Deep Learning?
 
 "Deep Learning is the application to learning tasks of artificial neural networks(ANNs) that contain more than one hidden layer. Deep learning is part of [Machine Learning](https://en.wikipedia.org/wiki/Machine_learning) methods based on learning data representations.
-Learning can be supervised, parially supervised or unsupervised.[3]"
+Learning can be [supervised](https://en.wikipedia.org/wiki/Supervised_learning), parially supervised or [unsupervised](https://en.wikipedia.org/wiki/Unsupervised_learning).[3]"
 
 ## Project desciption
 
