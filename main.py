@@ -61,6 +61,7 @@ for i in range(num_classes):
     plt.imshow(im)
 plt.show()
 
+# Data Pre-processing
 
 train_features = train_features.astype('float32')/255
 test_features = test_features.astype('float32')/255
