@@ -71,8 +71,9 @@ test_labels = np_utils.to_categorical(test_labels, num_classes)
 
 # 3. Define Model
 
+model = Sequential()
 
 # 4. Compile Model
 
-
 # 5. Fit Model
+
