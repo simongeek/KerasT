@@ -8,12 +8,13 @@ On blog:
 5. Describe main results
 6. Post on blog
 Requirements for the project:
-1. kod wczytujący zbiór cifar
-2. kod dokonujący wizualizacji zbioru, wyświetlenie kilku losowych obrazków ułożonych w macierz wraz z informacją do jakiej należą kategorii
-3. dwie funkcje budujące 2 siecie neuronowe w keras o różnej architekturze (różna ilość warstw, różne funkcje aktywacji, dropout - tak aby pokazać wpływ tych paramterów na ostateczną dokładnośc klasyfikacji)
+##### 1. kod wczytujący zbiór cifar
+##### 2. kod dokonujący wizualizacji zbioru, wyświetlenie kilku losowych obrazków ułożonych w macierz wraz z informacją do jakiej należą kategorii
+3. dwie funkcje budujące 2 siecie neuronowe w keras o różnej architekturze (różna ilość warstw, różne funkcje aktywacji, dropout
+- tak aby pokazać wpływ tych paramterów na ostateczną dokładnośc klasyfikacji)
 4. projekt powinien zawierać wykresy pokazujący progres uczenia się sieci na podstawie  training/testing loss and accuracies co N-itearcji
 5.wyswietlenie wynków klasyfikacji w postaci confusion matrix
-6. plik readme opisujący rozwiązanie min 600 słów w nim dwa
+##### 6. plik readme opisujący rozwiązanie min 600 słów w nim dwa
 7. projekt powinien być logicznie podzielony na pliki
 8. kod powinien być obficie skomentowany
 """
@@ -72,6 +73,12 @@ test_labels = np_utils.to_categorical(test_labels, num_classes)
 # 3. Define Model
 
 model = Sequential()
+model.add(Conv2D(32, 3, 3, input_shape=(3, 32, 32), activation='relu', border_mode='same'))
+model.add(Dropout(0.2))
+model.add(Conv2D(32, 3, 3, activation='relu', border_mode='same'))
+model.add(MaxPooling2D(pool_size=(2,2)))
+
+
 
 # 4. Compile Model
 
