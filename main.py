@@ -38,14 +38,14 @@ from keras import backend as K
 if K.backend()=='tensorflow':
     K.set_image_dim_ordering("th")
 
-# LOADING THE CIFAR-10 DATASET
+# 1. LOADING THE CIFAR-10 DATASET
 from keras.datasets import cifar10
 (train_features, train_labels), (test_features, test_labels) = cifar10.load_data()
 num_train, img_channels, img_rows, img_cols = train_features.shape
 num_test, _, _, _ = train_features.shape
 num_classes = len(np.unique(train_labels))
 
-# Here are the classes in the dataset, as well as 10 random images from each
+# 2. Here are the classes in the dataset, as well as 10 random images from each
 
 class_names = ['airplane','automobile','bird','cat','deer',
                'dog','frog','horse','ship','truck']
@@ -69,3 +69,10 @@ test_features = test_features.astype('float32')/255
 train_labels = np_utils.to_categorical(train_labels, num_classes)
 test_labels = np_utils.to_categorical(test_labels, num_classes)
 
+# 3. Define Model
+
+
+# 4. Compile Model
+
+
+# 5. Fit Model
