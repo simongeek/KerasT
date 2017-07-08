@@ -21,6 +21,10 @@ Requirements for the project:
 
 # IMPORT ALL MODULES
 
+import os
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+
 import time
 import matplotlib.pyplot as plt
 import numpy as np
@@ -39,6 +43,17 @@ from keras_sequential_ascii import sequential_model_to_ascii_printout
 from keras import backend as K
 if K.backend()=='tensorflow':
     K.set_image_dim_ordering("th")
+
+# Import Tensorflow with multiprocessing for use 16 cores on plon.io
+import tensorflow as tf
+import multiprocessing as mp
+
+core_num = mp.cpu_count()
+print(core_num)
+config = tf.ConfigProto(
+    inter_op_parallelism_threads=core_num,
+    intra_op_parallelism_threads=core_num)
+sess = tf.Session(config=config)
 
 # Loading the CIFAR-10 datasets
 from keras.datasets import cifar10
