@@ -73,14 +73,40 @@ test_labels = np_utils.to_categorical(test_labels, num_classes)
 # 3. Define Model
 
 model = Sequential()
-model.add(Conv2D(32, 3, 3, input_shape=(3, 32, 32), activation='relu', border_mode='same'))
+model.add(Conv2D(32, (3, 3), padding='same', activation='relu', input_shape=(3, 32, 32)))
 model.add(Dropout(0.2))
-model.add(Conv2D(32, 3, 3, activation='relu', border_mode='same'))
+model.add(Conv2D(32, (3, 3), padding='same', activation='relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
-
+model.add(Conv2D(64, (3, 3), padding='same', activation='relu'))
+model.add(Dropout(0.2))
+model.add(Conv2D(64, (3, 3), padding='same', activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(128, (3, 3), padding='same', activation='relu'))
+model.add(Dropout(0.2))
+model.add(Conv2D(128, (3, 3), padding='same', activation='relu'))
+model.add(MaxPooling2D(pool_size=(2,2)))
+model.add(Flatten())
+model.add(Dropout(0.2))
+model.add(Dense(1024, activation='relu', kernel_constraint=maxnorm(3)))
+model.add(Dropout(0.2))
+model.add(Dense(512, activation='relu', kernel_constraint=maxnorm(3)))
+model.add(Dropout(0.2))
+model.add(Dense(num_classes, activation='softmax'))
 
 
 # 4. Compile Model
 
-# 5. Fit Model
+epochs = 25
+lrate = 0.01
+decay = lrate/epochs
+sgd = SGD(lr = lrate, momentum=0.9, decay=decay)
+model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+model.summary()
+
+# 5. Fit Model(train)
+
+model.fit(train_features, train_labels, validation_data=(test_features, test_labels), nb_epoch=epochs, batch_size=64)
+
+scores = model.evaluate(test_features, test_labels, verbose=0)
+print("Accuracy: %.2f%%" % (scores[1]*100))
 
