@@ -56,10 +56,12 @@ print('x_train shape:', x_train.shape)
 print(x_train.shape[0], 'train samples')
 print(x_test.shape[0], 'test samples')
 
-# 2. Here are the classes in the dataset, as well as 10 random images from each
+# Here are the classes in the dataset, as well as 10 random images from each
 
 class_names = ['airplane','automobile','bird','cat','deer',
                'dog','frog','horse','ship','truck']
+
+# Print figure with 10 random images from each
 
 fig = plt.figure(figsize=(8,3))
 for i in range(num_classes):
@@ -73,12 +75,16 @@ for i in range(num_classes):
 plt.show()
 
 
-# Convert
+# Convert and pre-processing
+
 y_train = np_utils.to_categorical(y_train, num_classes)
 y_test = np_utils.to_categorical(y_test, num_classes)
+x_train = x_train.astype('float32')
+x_test = x_test.astype('float32')
+x_train  /= 255
+x_test /= 255
 
-
-# 3. Define Model
+# Define Model
 
 model = Sequential()
 model.add(Conv2D(32, (3, 3), padding='same', input_shape=x_train.shape[1:]))
@@ -104,20 +110,16 @@ model.add(Activation('softmax'))
 
 sgd = SGD(lr = 0.0001, decay=1e-6, nesterov=True)
 
-# Train
+# Train model
 
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 model.summary()
 
-# vizualizing model
+# Vizualizing model structure
+
 sequential_model_to_ascii_printout(model)
 
-
-x_train = x_train.astype('float32')
-x_test = x_test.astype('float32')
-x_train  /= 255
-x_test /= 255
-
+# Fit model
 
 model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validation_data=(x_test,y_test),shuffle=True)
 
