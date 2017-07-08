@@ -30,13 +30,19 @@ You will learn:
 * What is Keras library and how to use it
 * What is Deep Learning
 * How to use ready datasets
-* How to make Convolutional Neural Networks(CNN)
+* What is Convolutional Neural Networks(CNN)
+* How to build Convolutional Neural Networks(CNN)
 * What is supervised and unsupervised learning
 * Basics of Machine Learning
 * Introduction to Artificial Intelligence(AI)
 
 
+
 ## Project structure
+
+
+## Results
+
 
 
 
@@ -48,6 +54,7 @@ You will learn:
 4. [Tutorial by Dr. Jason Brownlee](http://machinelearningmastery.com/object-recognition-convolutional-neural-networks-keras-deep-learning-library/)
 5. [Tutorial by Parneet Kaur](http://parneetk.github.io/blog/cnn-cifar10/)
 6. [Tutorial by Giuseppe Bonaccorso](https://www.bonaccorso.eu/2016/08/06/cifar-10-image-classification-with-keras-convnet/)
+7. Open Source on GitHub
 
 
 ## Grab the code or run project in online IDE
