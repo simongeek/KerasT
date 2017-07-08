@@ -19,7 +19,7 @@ Requirements for the project:
 8. kod powinien być obficie skomentowany
 """
 
-# IMPORT MODULES
+# IMPORT ALL MODULES
 
 import time
 import matplotlib.pyplot as plt
@@ -40,20 +40,22 @@ from keras import backend as K
 if K.backend()=='tensorflow':
     K.set_image_dim_ordering("th")
 
-# 1. LOADING THE CIFAR-10 DATASET
+# Loading the CIFAR-10 datasets
 from keras.datasets import cifar10
 
+# Declare variables
 
-batch_size = 32
-num_classes = 10
-epochs = 200
+batch_size = 32 # 32 examples in a mini-batch, smaller batch size means more updates in one epoch
+num_classes = 10 #
+epochs = 200 # repeat 200 times
 data_augmentation = True
 
 
-(x_train, y_train), (x_test, y_test) = cifar10.load_data()
+(x_train, y_train), (x_test, y_test) = cifar10.load_data() # x_train - training data(images), y_train - labels(digits)
 print('x_train shape:', x_train.shape)
 print(x_train.shape[0], 'train samples')
 print(x_test.shape[0], 'test samples')
+
 # 2. Here are the classes in the dataset, as well as 10 random images from each
 
 class_names = ['airplane','automobile','bird','cat','deer',
