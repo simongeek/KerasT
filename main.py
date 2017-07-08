@@ -149,8 +149,6 @@ cnn = cnn_n.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validati
 
 # Plots
 
-## projekt powinien zawierać wykresy pokazujący progres uczenia się sieci na podstawie  training/testing loss and accuracies co N-itearcji
-
 plt.figure(0)
 plt.plot(cnn.history['acc'],'r')
 plt.plot(cnn.history['val_acc'],'g')
