@@ -147,7 +147,7 @@ cnn = cnn_n.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validati
 #print("Accuracy: %.2f%%" % (scores[1]*100))
 
 
-# Plots
+# Plots for training and testing process: loss and accuracy
 
 plt.figure(0)
 plt.plot(cnn.history['acc'],'r')
@@ -171,6 +171,12 @@ plt.legend(['train','val'])
 plt.show()
 
 
-## wyswietlenie wynków klasyfikacji w postaci confusion matrix
+# Confusion matrix result
 
 from sklearn.metrics import classification_report, confusion_matrix
+Y_pred = cnn_n.predict(x_test, verbose=2)
+y_pred = np.argmax(Y_pred, axis=1)
+
+for ix in range(10):
+    print(ix, confusion_matrix(np.argmax(y_test,axis=1),y_pred)[ix].sum())
+print(confusion_matrix(np.argmax(y_test,axis=1),y_pred))
