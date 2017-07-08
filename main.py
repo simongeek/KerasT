@@ -42,11 +42,7 @@ if K.backend()=='tensorflow':
 
 # 1. LOADING THE CIFAR-10 DATASET
 from keras.datasets import cifar10
-"""(train_features, train_labels), (test_features, test_labels) = cifar10.load_data()
-num_train, img_channels, img_rows, img_cols = train_features.shape
-num_test, _, _, _ = train_features.shape
-num_classes = len(np.unique(train_labels))
-"""
+
 
 batch_size = 32
 num_classes = 10
@@ -79,15 +75,7 @@ plt.show()
 y_train = np_utils.to_categorical(y_train, num_classes)
 y_test = np_utils.to_categorical(y_test, num_classes)
 
-"""
-# Data Pre-processing
 
-train_features = train_features.astype('float32')/255
-test_features = test_features.astype('float32')/255
-# convert class labels to binary class labels
-train_labels = np_utils.to_categorical(train_labels, num_classes)
-test_labels = np_utils.to_categorical(test_labels, num_classes)
-"""
 # 3. Define Model
 
 model = Sequential()
@@ -133,41 +121,3 @@ model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validation_dat
 
 scores = model.evaluate(x_test, y_test, verbose=0)
 print("Accuracy: %.2f%%" % (scores[1]*100))
-
-"""model.add(Conv2D(32, (3, 3), padding='same', activation='relu', input_shape=(3, 32, 32)))
-model.add(Dropout(0.2))
-model.add(Conv2D(32, (3, 3), padding='same', activation='relu'))
-model.add(MaxPooling2D(pool_size=(2,2)))
-model.add(Conv2D(64, (3, 3), padding='same', activation='relu'))
-model.add(Dropout(0.2))
-model.add(Conv2D(64, (3, 3), padding='same', activation='relu'))
-model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Conv2D(128, (3, 3), padding='same', activation='relu'))
-model.add(Dropout(0.2))
-model.add(Conv2D(128, (3, 3), padding='same', activation='relu'))
-model.add(MaxPooling2D(pool_size=(2,2)))
-model.add(Flatten())
-model.add(Dropout(0.2))
-model.add(Dense(1024, activation='relu', kernel_constraint=maxnorm(3)))
-model.add(Dropout(0.2))
-model.add(Dense(512, activation='relu', kernel_constraint=maxnorm(3)))
-model.add(Dropout(0.2))
-model.add(Dense(num_classes, activation='softmax'))
-
-
-# 4. Compile Model
-
-epochs = 25
-lrate = 0.01
-decay = lrate/epochs
-sgd = SGD(lr = lrate, momentum=0.9, decay=decay, nesterov=True)
-model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
-model.summary()
-
-# 5. Fit Model(train)
-
-model.fit(train_features, train_labels, validation_data=(test_features, test_labels), nb_epoch=epochs, batch_size=64)
-
-scores = model.evaluate(test_features, test_labels, verbose=0)
-print("Accuracy: %.2f%%" % (scores[1]*100))
-"""
