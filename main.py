@@ -101,42 +101,78 @@ x_test /= 255
 
 # Define Model
 
-model = Sequential()
-model.add(Conv2D(32, (3, 3), padding='same', input_shape=x_train.shape[1:]))
-model.add(Activation('relu'))
-model.add(Conv2D(32,(3, 3)))
-model.add(Activation('relu'))
-model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Dropout(0.25))
+def base_model():
 
-model.add(Conv2D(64, (3, 3), padding='same'))
-model.add(Activation('relu'))
-model.add(Conv2D(64, (3,3)))
-model.add(Activation('relu'))
-model.add(MaxPooling2D(pool_size=(2, 2)))
-model.add(Dropout(0.25))
+    model = Sequential()
+    model.add(Conv2D(32, (3, 3), padding='same', input_shape=x_train.shape[1:]))
+    model.add(Activation('relu'))
+    model.add(Conv2D(32,(3, 3)))
+    model.add(Activation('relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+    model.add(Dropout(0.25))
 
-model.add(Flatten())
-model.add(Dense(512))
-model.add(Activation('relu'))
-model.add(Dropout(0.5))
-model.add(Dense(num_classes))
-model.add(Activation('softmax'))
+    model.add(Conv2D(64, (3, 3), padding='same'))
+    model.add(Activation('relu'))
+    model.add(Conv2D(64, (3,3)))
+    model.add(Activation('relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+    model.add(Dropout(0.25))
 
-sgd = SGD(lr = 0.0001, decay=1e-6, nesterov=True)
+    model.add(Flatten())
+    model.add(Dense(512))
+    model.add(Activation('relu'))
+    model.add(Dropout(0.5))
+    model.add(Dense(num_classes))
+    model.add(Activation('softmax'))
+
+    sgd = SGD(lr = 0.0001, decay=1e-6, nesterov=True)
 
 # Train model
 
-model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
-model.summary()
+    model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+    return model
+cnn_n = base_model()
+cnn_n.summary()
 
 # Vizualizing model structure
 
-sequential_model_to_ascii_printout(model)
+sequential_model_to_ascii_printout(cnn_n)
 
 # Fit model
 
-model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validation_data=(x_test,y_test),shuffle=True)
+cnn = cnn_n.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validation_data=(x_test,y_test),shuffle=True)
 
-scores = model.evaluate(x_test, y_test, verbose=0)
-print("Accuracy: %.2f%%" % (scores[1]*100))
+
+#scores = cnn.evaluate(x_test, y_test, verbose=0)
+#print("Accuracy: %.2f%%" % (scores[1]*100))
+
+
+# Plots
+
+## projekt powinien zawierać wykresy pokazujący progres uczenia się sieci na podstawie  training/testing loss and accuracies co N-itearcji
+
+plt.figure(0)
+plt.plot(cnn.history['acc'],'r')
+plt.plot(cnn.history['val_acc'],'g')
+plt.xticks(np.arange(0, 11, 5.0))
+plt.rcParams['figure.figsize'] = (8, 6)
+plt.xlabel("Num of Epochs")
+plt.ylabel("Accuracy")
+plt.title("Training Accuracy vs Validation Accuracy")
+plt.legend(['train','val'])
+
+plt.figure(1)
+plt.plot(cnn.history['loss'],'r')
+plt.plot(cnn.history['val_loss'],'g')
+plt.xticks(np.arange(0, 11, 5.0))
+plt.rcParams['figure.figsize'] = (8, 6)
+plt.xlabel("Num of Epochs")
+plt.ylabel("Loss")
+plt.title("Training Loss vs Validation Loss")
+plt.legend(['train','val'])
+plt.show()
+
+
+## wyswietlenie wynków klasyfikacji w postaci confusion matrix
+
+from sklearn.metrics import classification_report, confusion_matrix
