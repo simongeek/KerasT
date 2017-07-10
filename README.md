@@ -48,7 +48,7 @@ You will learn:
 
 ### Results
 
-All results are for 50k iteration.
+All results are for 50k iteration, learning rate=0.1.
 
 * epochs = 10  **accuracy=70.45%**
 
