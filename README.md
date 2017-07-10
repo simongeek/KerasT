@@ -51,12 +51,12 @@ You will learn:
 All results are for 50k iteration.
 
 * epochs = 10  **accuracy=70.45%**
-![Keras Training Accuracy vs Validation Accuracy](https://plon.io/files/59637666c0265100013c2c7a)
-![Keras Training Loss vs Validation Loss](https://plon.io/files/59637667c0265100013c2c7c)
+[Keras Training Accuracy vs Validation Accuracy](https://plon.io/files/59637666c0265100013c2c7a)
+[Keras Training Loss vs Validation Loss](https://plon.io/files/59637667c0265100013c2c7c)
 
 * epochs = 20 **accuracy=74.57%**
-![Keras Training Accuracy vs Validation Accuracy](https://plon.io/files/59639691c0265100013c2c80)
-![Keras Training Loss vs Validation Loss](https://plon.io/files/59639691c0265100013c2c82)
+[Keras Training Accuracy vs Validation Accuracy](https://plon.io/files/59639691c0265100013c2c80)
+[Keras Training Loss vs Validation Loss](https://plon.io/files/59639691c0265100013c2c82)
 
 Confusion matrix result:
 
