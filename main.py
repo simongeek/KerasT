@@ -62,7 +62,7 @@ from keras.datasets import cifar10
 
 batch_size = 32 # 32 examples in a mini-batch, smaller batch size means more updates in one epoch
 num_classes = 10 #
-epochs = 200 # repeat 200 times
+epochs = 1 # repeat 200 times
 data_augmentation = True
 
 
@@ -125,7 +125,7 @@ def base_model():
     model.add(Dense(num_classes))
     model.add(Activation('softmax'))
 
-    sgd = SGD(lr = 0.0001, decay=1e-6, nesterov=True)
+    sgd = SGD(lr = 0.1, decay=1e-6, nesterov=True)
 
 # Train model
 
@@ -143,8 +143,7 @@ sequential_model_to_ascii_printout(cnn_n)
 cnn = cnn_n.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validation_data=(x_test,y_test),shuffle=True)
 
 
-#scores = cnn.evaluate(x_test, y_test, verbose=0)
-#print("Accuracy: %.2f%%" % (scores[1]*100))
+
 
 
 # Plots for training and testing process: loss and accuracy
@@ -152,23 +151,26 @@ cnn = cnn_n.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validati
 plt.figure(0)
 plt.plot(cnn.history['acc'],'r')
 plt.plot(cnn.history['val_acc'],'g')
-plt.xticks(np.arange(0, 11, 5.0))
+plt.xticks(np.arange(0, 201, 20.0))
 plt.rcParams['figure.figsize'] = (8, 6)
 plt.xlabel("Num of Epochs")
 plt.ylabel("Accuracy")
 plt.title("Training Accuracy vs Validation Accuracy")
-plt.legend(['train','val'])
+plt.legend(['train','validation'])
 
 plt.figure(1)
 plt.plot(cnn.history['loss'],'r')
 plt.plot(cnn.history['val_loss'],'g')
-plt.xticks(np.arange(0, 11, 5.0))
+plt.xticks(np.arange(0, 201, 20.0))
 plt.rcParams['figure.figsize'] = (8, 6)
 plt.xlabel("Num of Epochs")
 plt.ylabel("Loss")
 plt.title("Training Loss vs Validation Loss")
-plt.legend(['train','val'])
+plt.legend(['train','validation'])
 plt.show()
+
+scores = cnn_n.evaluate(x_test, y_test, verbose=0)
+print("Accuracy: %.2f%%" % (scores[1]*100))
 
 
 # Confusion matrix result
