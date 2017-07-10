@@ -57,6 +57,10 @@ All results are for 50k iteration.
 ![Keras Training Accuracy vs Validation Accuracy](https://plon.io/files/59637666c0265100013c2c7a)
 ![Keras Training Loss vs Validation Loss](https://plon.io/files/59637667c0265100013c2c7c)
 
+Confusion matrix result:
+
+Time of learning process: 1h 10min
+
 * epochs = 20 **accuracy=74.57%**
 
 
@@ -71,7 +75,7 @@ Confusion matrix result:
 
 Confusion matrix result:
 
-
+Time of learning process: 2h 15min
 
 ## Results
 
