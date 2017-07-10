@@ -33,12 +33,16 @@ You will learn:
 * What is Deep Learning
 * How to use ready datasets
 * What is Convolutional Neural Networks(CNN)
-* How to build Convolutional Neural Networks(CNN)
+* How to build step by step Convolutional Neural Networks(CNN)
+* What are differences in model results
 * What is supervised and unsupervised learning
 * Basics of Machine Learning
 * Introduction to Artificial Intelligence(AI)
 
 ## Project structure
+
+* main.py -
+* CNN2.py -
 
 ## Convolutional neural network
 
