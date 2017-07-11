@@ -47,26 +47,109 @@ You will learn:
 ## Convolutional neural network
 
 
-### Single layer neural network
+### 6-layer neural network
 
 #### Network Architecture
+
+```
+OPERATION           DATA DIMENSIONS   WEIGHTS(N)   WEIGHTS(%)
+
+               Input   #####      3   32   32
+              Conv2D    \|/  -------------------       896     0.0%
+                relu   #####     32   32   32
+             Dropout    | || -------------------         0     0.0%
+                       #####     32   32   32
+              Conv2D    \|/  -------------------      9248     0.4%
+                relu   #####     32   32   32
+        MaxPooling2D   Y max -------------------         0     0.0%
+                       #####     32   16   16
+              Conv2D    \|/  -------------------     18496     0.8%
+                relu   #####     64   16   16
+             Dropout    | || -------------------         0     0.0%
+                       #####     64   16   16
+              Conv2D    \|/  -------------------     36928     1.5%
+                relu   #####     64   16   16
+        MaxPooling2D   Y max -------------------         0     0.0%
+                       #####     64    8    8
+              Conv2D    \|/  -------------------     73856     3.1%
+                relu   #####    128    8    8
+             Dropout    | || -------------------         0     0.0%
+                       #####    128    8    8
+              Conv2D    \|/  -------------------    147584     6.2%
+                relu   #####    128    8    8
+        MaxPooling2D   Y max -------------------         0     0.0%
+                       #####    128    4    4
+             Flatten   ||||| -------------------         0     0.0%
+                       #####        2048
+             Dropout    | || -------------------         0     0.0%
+                       #####        2048
+               Dense   XXXXX -------------------   2098176    87.6%
+                relu   #####        1024
+             Dropout    | || -------------------         0     0.0%
+                       #####        1024
+               Dense   XXXXX -------------------     10250     0.4%
+             softmax   #####          10
+```
 
 #### Model
 ```
 model = Sequential()
-    model.add(Conv2D(32, (3,3),input_shape=x_train.shape[1:]))
-    model.add(Activation('relu'))
-    model.add(MaxPooling2D())
 
-    model.add(Flatten)
-    model.add(Dense(128))
-    model.add(Activation('relu'))
+    model.add(Conv2D(32, (3, 3), padding='same', activation='relu', input_shape=x_train.shape[1:]))
     model.add(Dropout(0.2))
-    model.add(Dense(10))
-    model.add(Activation('softmax'))
-    sgd = SGD(lr = 0.1, momentum=0.9, decay=1e-6, nesterov=False)
+
+    model.add(Conv2D(32,(3,3),padding='same', activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+
+    model.add(Conv2D(64,(3,3),padding='same',activation='relu'))
+    model.add(Dropout(0.2))
+
+    model.add(Conv2D(64,(3,3),padding='same',activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+
+    model.add(Conv2D(128,(3,3),padding='same',activation='relu'))
+    model.add(Dropout(0.2))
+
+    model.add(Conv2D(128,(3,3),padding='same',activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+
+    model.add(Flatten())
+    model.add(Dropout(0.2))
+    model.add(Dense(1024,activation='relu',kernel_constraint=maxnorm(3)))
+    model.add(Dropout(0.2))
+    model.add(Dense(num_classes, activation='softmax'))
+
+
+
+    sgd = SGD(lr=0.01, momentum=0.9, decay=1e-6, nesterov=False)
+```
+Train model:
+```
+    model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+    return model
+cnn_n = base_model()
+cnn_n.summary()
+```
+Fit model:
+```
+cnn = cnn_n.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validation_data=(x_test,y_test),shuffle=True)
 ```
 #### Results
+
+All results are for 50k iteration, learning rate=0.01. Neural networks have been trained at **16 cores and 16GB RAM** on [plon.io](https://plon.io/)
+
+* epochs = 10 **accuracy=x%**
+
+
+
+
+* epochs = 20 **accuracy=x%**
+
+
+* epochs = 50 **accuracy=x%**
+
+
+* epochs = 100 **accuracy=x%**
 
 ### 4-Layer neural network
 
@@ -128,6 +211,17 @@ model = Sequential()
 
     sgd = SGD(lr = 0.1, decay=1e-6, nesterov=True)
 ```
+Train model:
+```
+    model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+    return model
+cnn_n = base_model()
+cnn_n.summary()
+```
+Fit model:
+```
+cnn = cnn_n.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validation_data=(x_test,y_test),shuffle=True)
+```
 
 #### Results
 
@@ -162,9 +256,14 @@ Time of learning process: **2h 15min**
 ![Keras Training Loss vs Validation Loss](https://plon.io/files/5963e890c0265100013c2c8e)
 
 
+
+
 Confusion matrix result:
 
 Time of learning process: **5h 45min**
+
+
+* epochs = 100 **accuracy=x%**
 
 
 ## Results

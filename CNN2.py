@@ -1,6 +1,3 @@
-#### Xavier initialiation for faster learning
-
-
 import os
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = ""
@@ -42,7 +39,7 @@ from keras.datasets import cifar10
 
 batch_size = 32 # 32 examples in a mini-batch, smaller batch size means more updates in one epoch
 num_classes = 10 #
-epochs = 10 # repeat 200 times
+epochs = 1 # repeat 200 times
 data_augmentation = True
 
 
@@ -82,19 +79,35 @@ x_test /= 255
 # Define Model
 
 def base_model():
-
     model = Sequential()
-    model.add(Conv2D(32, (3,3),input_shape=x_train.shape[1:]))
-    model.add(Activation('relu'))
-    model.add(MaxPooling2D())
 
-    model.add(Flatten)
-    model.add(Dense(128))
-    model.add(Activation('relu'))
+    model.add(Conv2D(32, (3, 3), padding='same', activation='relu', input_shape=x_train.shape[1:]))
     model.add(Dropout(0.2))
-    model.add(Dense(10))
-    model.add(Activation('softmax'))
-    sgd = SGD(lr = 0.1, momentum=0.9, decay=1e-6, nesterov=False)
+
+    model.add(Conv2D(32,(3,3),padding='same', activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+
+    model.add(Conv2D(64,(3,3),padding='same',activation='relu'))
+    model.add(Dropout(0.2))
+
+    model.add(Conv2D(64,(3,3),padding='same',activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+
+    model.add(Conv2D(128,(3,3),padding='same',activation='relu'))
+    model.add(Dropout(0.2))
+
+    model.add(Conv2D(128,(3,3),padding='same',activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2,2)))
+
+    model.add(Flatten())
+    model.add(Dropout(0.2))
+    model.add(Dense(1024,activation='relu',kernel_constraint=maxnorm(3)))
+    model.add(Dropout(0.2))
+    model.add(Dense(num_classes, activation='softmax'))
+
+
+
+    sgd = SGD(lr=0.01, momentum=0.9, decay=1e-6, nesterov=False)
 
 # Train model
 
