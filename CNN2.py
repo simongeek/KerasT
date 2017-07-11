@@ -42,7 +42,7 @@ from keras.datasets import cifar10
 
 batch_size = 32 # 32 examples in a mini-batch, smaller batch size means more updates in one epoch
 num_classes = 10 #
-epochs = 1 # repeat 200 times
+epochs = 10 # repeat 200 times
 data_augmentation = True
 
 
@@ -84,27 +84,16 @@ x_test /= 255
 def base_model():
 
     model = Sequential()
-    model.add(Conv2D(32, (3, 3), padding='same', input_shape=x_train.shape[1:]))
+    model.add(Conv2D(32, (3,3),input_shape=x_train.shape[1:]))
     model.add(Activation('relu'))
-    model.add(Conv2D(32,(3, 3)))
-    model.add(Activation('relu'))
-    model.add(MaxPooling2D(pool_size=(2, 2)))
-    model.add(Dropout(0.25))
+    model.add(MaxPooling2D())
 
-    model.add(Conv2D(64, (3, 3), padding='same'))
+    model.add(Flatten)
+    model.add(Dense(128))
     model.add(Activation('relu'))
-    model.add(Conv2D(64, (3,3)))
-    model.add(Activation('relu'))
-    model.add(MaxPooling2D(pool_size=(2, 2)))
-    model.add(Dropout(0.25))
-
-    model.add(Flatten())
-    model.add(Dense(512))
-    model.add(Activation('relu'))
-    model.add(Dropout(0.5))
-    model.add(Dense(num_classes))
+    model.add(Dropout(0.2))
+    model.add(Dense(10))
     model.add(Activation('softmax'))
-
     sgd = SGD(lr = 0.1, momentum=0.9, decay=1e-6, nesterov=False)
 
 # Train model
@@ -131,7 +120,7 @@ cnn = cnn_n.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validati
 plt.figure(0)
 plt.plot(cnn.history['acc'],'r')
 plt.plot(cnn.history['val_acc'],'g')
-plt.xticks(np.arange(0, 201, 20.0))
+plt.xticks(np.arange(0, 11, 2.0))
 plt.rcParams['figure.figsize'] = (8, 6)
 plt.xlabel("Num of Epochs")
 plt.ylabel("Accuracy")
@@ -141,7 +130,7 @@ plt.legend(['train','validation'])
 plt.figure(1)
 plt.plot(cnn.history['loss'],'r')
 plt.plot(cnn.history['val_loss'],'g')
-plt.xticks(np.arange(0, 201, 20.0))
+plt.xticks(np.arange(0, 11, 2.0))
 plt.rcParams['figure.figsize'] = (8, 6)
 plt.xlabel("Num of Epochs")
 plt.ylabel("Loss")
