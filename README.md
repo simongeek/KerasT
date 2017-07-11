@@ -41,8 +41,10 @@ You will learn:
 
 ## Project structure
 
-* main.py -
-* CNN2.py -
+* 4layerCNN.py -
+* 6layerCNN.py -
+* Plots - directory with plots
+* README.md - project description step by step
 
 ## Convolutional neural network
 
@@ -148,15 +150,15 @@ Confusion matrix result:
 Time of learning process: **1h 45min**
 
 
-* epochs = 20 **accuracy=x%**
+* epochs = 20 **accuracy=75.31%**
 
 
-![Keras Training Accuracy vs Validation Accuracy]()
-![Keras Training Loss vs Validation Loss]()
+![Keras Training Accuracy vs Validation Accuracy](https://plon.io/files/59654ea78c5c480001b146f9)
+![Keras Training Loss vs Validation Loss](https://plon.io/files/59654ea78c5c480001b146fb)
 
 Confusion matrix result:
 
-Time of learning process: **1h 10min**
+Time of learning process: **3h 40min**
 
 * epochs = 50 **accuracy=x%**
 
