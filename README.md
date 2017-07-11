@@ -145,8 +145,19 @@ All results are for 50k iteration, learning rate=0.01. Neural networks have been
 ![Keras Training Accuracy vs Validation Accuracy](https://plon.io/files/59651c4b8c5c480001b146f1)
 ![Keras Training Loss vs Validation Loss](https://plon.io/files/59651c4b8c5c480001b146f3)
 
-Confusion matrix result:
-
+**Confusion matrix result:**
+```
+[[806   9  39  13  28    4   7   9  61  24]
+ [ 14 870   4  10   3    4   7   0  28  60]
+ [ 69   1 628  64 122   36  44  19  13   4]
+ [ 19   5  52 582 109   99  76  29  14  15]
+ [ 13   2  44  46 761   27  38  62   6   1]
+ [ 15   1  50 189  69  588  31  48   7   2]
+ [  8   3  39  53  52   14 814   4  10   3]
+ [ 15   3  31  45  63   29   5 795   2  12]
+ [ 61  13   8  10  17    1   4   4 875   7]
+ [ 23  52  11  10   7    7   5  12  31 842]]
+```
 Time of learning process: **1h 45min**
 
 
@@ -156,8 +167,19 @@ Time of learning process: **1h 45min**
 ![Keras Training Accuracy vs Validation Accuracy](https://plon.io/files/59654ea78c5c480001b146f9)
 ![Keras Training Loss vs Validation Loss](https://plon.io/files/59654ea78c5c480001b146fb)
 
-Confusion matrix result:
-
+**Confusion matrix result:**
+```
+[[810   5  30  22  14    2   9  10  60  38]
+ [ 13 862   7   8   3    6   4   7  20  70]
+ [ 85   2 626  67  84   44  44  27  12   9]
+ [ 39   6  47 581  73  137  50  38  17  12]
+ [ 22   1  52  87 744   34  22  64   2   2]
+ [ 20   3  40 178  44  639  21  48   2   5]
+ [ 12   3  42  55  67   16 782  10   7   6]
+ [ 15   2  24  38  59   37   3 810   5   7]
+ [ 79  14  10  19   6    4   8   5 827  28]
+ [ 25  60   8   9   8    5   2  12  21 850]]
+```
 Time of learning process: **3h 40min**
 
 * epochs = 50 **accuracy=x%**
