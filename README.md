@@ -138,18 +138,44 @@ cnn = cnn_n.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validati
 
 All results are for 50k iteration, learning rate=0.01. Neural networks have been trained at **16 cores and 16GB RAM** on [plon.io](https://plon.io/)
 
-* epochs = 10 **accuracy=x%**
+* epochs = 10 **accuracy=75.61%**
 
+![Keras Training Accuracy vs Validation Accuracy](https://plon.io/files/59651c4b8c5c480001b146f1)
+![Keras Training Loss vs Validation Loss](https://plon.io/files/59651c4b8c5c480001b146f3)
 
+Confusion matrix result:
+
+Time of learning process: **1h 45min**
 
 
 * epochs = 20 **accuracy=x%**
 
 
+![Keras Training Accuracy vs Validation Accuracy]()
+![Keras Training Loss vs Validation Loss]()
+
+Confusion matrix result:
+
+Time of learning process: **1h 10min**
+
 * epochs = 50 **accuracy=x%**
+
+![Keras Training Accuracy vs Validation Accuracy]()
+![Keras Training Loss vs Validation Loss]()
+
+Confusion matrix result:
+
+Time of learning process: **1h 10min**
 
 
 * epochs = 100 **accuracy=x%**
+
+![Keras Training Accuracy vs Validation Accuracy]()
+![Keras Training Loss vs Validation Loss]()
+
+Confusion matrix result:
+
+Time of learning process: **1h 10min**
 
 ### 4-Layer neural network
 
