@@ -140,6 +140,8 @@ plt.ylabel("Accuracy")
 plt.title("Training Accuracy vs Validation Accuracy")
 plt.legend(['train','validation'])
 
+plt.savefig('.../Plots/image1.png')
+
 plt.figure(1)
 plt.plot(cnn.history['loss'],'r')
 plt.plot(cnn.history['val_loss'],'g')
@@ -149,6 +151,9 @@ plt.xlabel("Num of Epochs")
 plt.ylabel("Loss")
 plt.title("Training Loss vs Validation Loss")
 plt.legend(['train','validation'])
+
+plt.savefig('.../Plots/image2.png')
+
 plt.show()
 
 scores = cnn_n.evaluate(x_test, y_test, verbose=0)
