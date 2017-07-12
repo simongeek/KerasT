@@ -186,7 +186,7 @@ Time of learning process: **1h 45min**
  [ 25  60   8   9   8    5   2  12  21 850]]
 ```
 
-https://user-images.githubusercontent.com/11740059/28138461-2445946a-6751-11e7-930c-13217c9a5e13.png
+![620](https://user-images.githubusercontent.com/11740059/28138461-2445946a-6751-11e7-930c-13217c9a5e13.png)
 
 
 Time of learning process: **3h 40min**
