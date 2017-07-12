@@ -43,6 +43,7 @@ You will learn:
 
 * 4layerCNN.py -
 * 6layerCNN.py -
+* VGG16model.py -
 * Plots - directory with plots
 * README.md - project description step by step
 
