@@ -160,6 +160,8 @@ All results are for 50k iteration, learning rate=0.01. Neural networks have been
  [ 23  52  11  10   7    7   5  12  31 842]]
 ```
 
+**Confusion matrix vizualizing**
+
 ![610](https://user-images.githubusercontent.com/11740059/28138320-a88b8e60-6750-11e7-9ec4-ac73ab40ccc7.png)
 
 
@@ -185,6 +187,8 @@ Time of learning process: **1h 45min**
  [ 79  14  10  19   6    4   8   5 827  28]
  [ 25  60   8   9   8    5   2  12  21 850]]
 ```
+
+**Confusion matrix vizualizing**
 
 ![620](https://user-images.githubusercontent.com/11740059/28138461-2445946a-6751-11e7-930c-13217c9a5e13.png)
 
@@ -307,6 +311,9 @@ All results are for 50k iteration, learning rate=0.1. Neural networks have been 
  [ 74   4   3   9   4   6   8   4 854  34]
  [ 18   8   5  13   9   4  10   6  34 893]]
 ```
+
+**Confusion matrix vizualizing**
+
 ![410](https://user-images.githubusercontent.com/11740059/28138095-dd7402c0-674f-11e7-831d-907f59da2723.png)
 
 Time of learning process: **1h 10min**
@@ -332,6 +339,8 @@ Time of learning process: **1h 10min**
  [ 39  30  11  18  18    5  11   5 847  16]
  [ 30  61   3  22   9    2   7   8  16 842]]
 ```
+
+**Confusion matrix vizualizing**
 
 ![420](https://user-images.githubusercontent.com/11740059/28138581-98f7c1c0-6751-11e7-8f87-0d513b29391b.png)
 
@@ -374,6 +383,9 @@ Confusion matrix result:
  [ 25  28   8  77  29   27   5  19  59 723]]
 
 ```
+
+
+**Confusion matrix vizualizing**
 
 ![4100](https://user-images.githubusercontent.com/11740059/28138980-e79bebf2-6752-11e7-9415-e45272435a9c.png)
 
