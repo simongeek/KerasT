@@ -140,7 +140,6 @@ plt.ylabel("Accuracy")
 plt.title("Training Accuracy vs Validation Accuracy")
 plt.legend(['train','validation'])
 
-plt.savefig('.../Plots/image1.png')
 
 plt.figure(1)
 plt.plot(cnn.history['loss'],'r')
@@ -152,7 +151,6 @@ plt.ylabel("Loss")
 plt.title("Training Loss vs Validation Loss")
 plt.legend(['train','validation'])
 
-plt.savefig('.../Plots/image2.png')
 
 plt.show()
 
