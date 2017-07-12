@@ -284,7 +284,7 @@ All results are for 50k iteration, learning rate=0.1. Neural networks have been 
 ![Keras Training Accuracy vs Validation Accuracy](https://plon.io/files/59637666c0265100013c2c7a)
 ![Keras Training Loss vs Validation Loss](https://plon.io/files/59637667c0265100013c2c7c)
 
-Confusion matrix result:
+**Confusion matrix result:**
 
 Time of learning process: **1h 10min**
 
@@ -295,7 +295,20 @@ Time of learning process: **1h 10min**
 ![Keras Training Accuracy vs Validation Accuracy](https://plon.io/files/59639691c0265100013c2c80)
 ![Keras Training Loss vs Validation Loss](https://plon.io/files/59639691c0265100013c2c82)
 
-Confusion matrix result:
+**Confusion matrix result:**
+
+```
+[[729  11  56  36  52    5  12  11  58  30]
+ [  8 883   1  12   5    1  19   0  11  60]
+ [ 40   3 545  88 152   54  71  35   7   5]
+ [ 10   8  30 583 128  106  75  38  10  12]
+ [  7   1  15  37 806    9  43  77   5   0]
+ [  6   5  18 214  76  586  32  59   2   2]
+ [  3   3  23  58  65    7 825  11   4   1]
+ [  5   2  12  56  73   24  11 811   0   6]
+ [ 39  30  11  18  18    5  11   5 847  16]
+ [ 30  61   3  22   9    2   7   8  16 842]]
+```
 
 Time of learning process: **2h 15min**
 
@@ -308,7 +321,7 @@ Time of learning process: **2h 15min**
 
 
 
-Confusion matrix result:
+**Confusion matrix result:**
 
 Time of learning process: **5h 45min**
 
