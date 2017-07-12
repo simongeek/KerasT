@@ -299,6 +299,7 @@ All results are for 50k iteration, learning rate=0.1. Neural networks have been 
  [ 74   4   3   9   4   6   8   4 854  34]
  [ 18   8   5  13   9   4  10   6  34 893]]
 ```
+![410](https://user-images.githubusercontent.com/11740059/28138095-dd7402c0-674f-11e7-831d-907f59da2723.png)
 
 Time of learning process: **1h 10min**
 
