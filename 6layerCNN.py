@@ -168,4 +168,17 @@ y_pred = np.argmax(Y_pred, axis=1)
 
 for ix in range(10):
     print(ix, confusion_matrix(np.argmax(y_test,axis=1),y_pred)[ix].sum())
-print(confusion_matrix(np.argmax(y_test,axis=1),y_pred))
+cm = confusion_matrix(np.argmax(y_test,axis=1),y_pred)
+print(cm)
+
+# Visualizing of confusion matrix
+import seaborn as sn
+import pandas  as pd
+
+
+df_cm = pd.DataFrame(cm, range(10),
+                  range(10))
+plt.figure(figsize = (10,7))
+sn.set(font_scale=1.4)#for label size
+sn.heatmap(df_cm, annot=True,annot_kws={"size": 12})# font size
+plt.show()

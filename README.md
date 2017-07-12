@@ -278,14 +278,27 @@ cnn = cnn_n.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validati
 
 All results are for 50k iteration, learning rate=0.1. Neural networks have been trained at **16 cores and 16GB RAM** on [plon.io](https://plon.io/)
 
-* epochs = 10  **accuracy=70.45%**
+* epochs = 10  **accuracy=71.29%**
 
 
 
-![Keras Training Accuracy vs Validation Accuracy](https://plon.io/files/59637666c0265100013c2c7a)
-![Keras Training Loss vs Validation Loss](https://plon.io/files/59637667c0265100013c2c7c)
+![Keras Training Accuracy vs Validation Accuracy](https://plon.io/files/5965fdac8c5c48000129f83f)
+![Keras Training Loss vs Validation Loss](https://plon.io/files/5965fdac8c5c48000129f841)
 
 **Confusion matrix result:**
+
+```
+[[772   5  24  19  17   6  18  10  66  63]
+ [ 14 637   1   4   3   7  19   2  38 275]
+ [ 81   0 538  50  88  86  93  27  19  18]
+ [ 20   1  52 468  60 180 143  33  13  30]
+ [ 19   1  51  59 662  33  91  66  16   2]
+ [ 12   0  34 135  37 664  53  41  11  13]
+ [  7   0  23  29  26  13 885   2  10   5]
+ [ 10   0  24  45  48  69  20 756   5  23]
+ [ 74   4   3   9   4   6   8   4 854  34]
+ [ 18   8   5  13   9   4  10   6  34 893]]
+```
 
 Time of learning process: **1h 10min**
 
