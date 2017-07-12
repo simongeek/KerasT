@@ -159,6 +159,10 @@ All results are for 50k iteration, learning rate=0.01. Neural networks have been
  [ 61  13   8  10  17    1   4   4 875   7]
  [ 23  52  11  10   7    7   5  12  31 842]]
 ```
+
+![610](https://user-images.githubusercontent.com/11740059/28138320-a88b8e60-6750-11e7-9ec4-ac73ab40ccc7.png)
+
+
 Time of learning process: **1h 45min**
 
 
@@ -181,6 +185,10 @@ Time of learning process: **1h 45min**
  [ 79  14  10  19   6    4   8   5 827  28]
  [ 25  60   8   9   8    5   2  12  21 850]]
 ```
+
+https://user-images.githubusercontent.com/11740059/28138461-2445946a-6751-11e7-930c-13217c9a5e13.png
+
+
 Time of learning process: **3h 40min**
 
 * epochs = 50 **accuracy=x%**
@@ -325,6 +333,8 @@ Time of learning process: **1h 10min**
  [ 30  61   3  22   9    2   7   8  16 842]]
 ```
 
+![420](https://user-images.githubusercontent.com/11740059/28138581-98f7c1c0-6751-11e7-8f87-0d513b29391b.png)
+
 Time of learning process: **2h 15min**
 
 * epochs = 50 **accuracy=75.32%**
@@ -364,6 +374,8 @@ Confusion matrix result:
  [ 25  28   8  77  29   27   5  19  59 723]]
 
 ```
+
+![4100](https://user-images.githubusercontent.com/11740059/28138589-a899c0c4-6751-11e7-8c26-c4c7d8bbfae3.png)
 
 ## Results
 
