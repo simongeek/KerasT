@@ -195,14 +195,27 @@ Time of learning process: **1h 45min**
 
 Time of learning process: **3h 40min**
 
-* epochs = 50 **accuracy=x%**
+* epochs = 50 **accuracy=69.93%**
 
-![Keras Training Accuracy vs Validation Accuracy]()
-![Keras Training Loss vs Validation Loss]()
+![Keras Training Accuracy vs Validation Accuracy](https://plon.io/files/596e67fed81bbc0001085260)
+![Keras Training Loss vs Validation Loss](https://plon.io/files/596e67ffd81bbc0001085262)
 
 **Confusion matrix result:**
 
-Time of learning process: **1h 10min**
+[[760   5  72  32  11   6  12   7  67  28]
+ [ 12 862  10  16   3   2  18   4  30  43]
+ [ 55   1 712  67  44  35  47  20  11   8]
+ [ 37   7 126 554  63  81  69  45  11   7]
+ [ 23   2 125  86 622  27  36  69   8   2]
+ [ 20   2 121 201  48 488  56  50   7   7]
+ [ 16   7 101  65  28  27 734   8  10   4]
+ [ 16   4  59  60  57  36   9 749   5   5]
+ [107  13  30  32   3  10   8   6 770  21]
+ [ 42 100   8  26   8   7   4  21  42 742]]
+ 
+ ![plot](https://plon.io/files/596e686ad81bbc0001085264)
+
+Time of learning process: **8h 10min**
 
 
 * epochs = 100 **accuracy=x%**
