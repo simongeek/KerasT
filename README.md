@@ -201,7 +201,7 @@ Time of learning process: **3h 40min**
 ![Keras Training Loss vs Validation Loss](https://plon.io/files/596e67ffd81bbc0001085262)
 
 **Confusion matrix result:**
-
+```
 [[760   5  72  32  11   6  12   7  67  28]
  [ 12 862  10  16   3   2  18   4  30  43]
  [ 55   1 712  67  44  35  47  20  11   8]
@@ -212,8 +212,11 @@ Time of learning process: **3h 40min**
  [ 16   4  59  60  57  36   9 749   5   5]
  [107  13  30  32   3  10   8   6 770  21]
  [ 42 100   8  26   8   7   4  21  42 742]]
+ ```
+ **Confusion matrix vizualizing**
  
- ![plot](https://plon.io/files/596e686ad81bbc0001085264)
+![650](https://user-images.githubusercontent.com/11740059/28338609-cf818aa2-6c09-11e7-83c0-89efa60b7c5f.png)
+
 
 Time of learning process: **8h 10min**
 
