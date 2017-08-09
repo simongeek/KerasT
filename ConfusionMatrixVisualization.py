@@ -2,6 +2,8 @@ import seaborn as sn
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# Simple example for array bellow
+
 array = [[736,  11,  54,  45,  30,  14,  15 ,  9,  61,  25],
  [ 10, 839,   6 , 38,   3  ,13,   7,   5 , 22,  57],
  [ 47 ,  2 ,566 , 96 ,145 , 65,  51 , 17 ,  7  , 4],
