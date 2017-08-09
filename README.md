@@ -41,10 +41,8 @@ You will learn:
 
 ## Project structure
 
-* 4layerCNN.py -
-* 6layerCNN.py -
-* VGG16model.py -
-* Plots - directory with plots
+* 4layerCNN.py - 4-layer Keras model
+* 6layerCNN.py - 6-layer Keras model
 * README.md - project description step by step
 
 ## Convolutional neural network
