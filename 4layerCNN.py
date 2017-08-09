@@ -46,7 +46,7 @@ from keras.datasets import cifar10
 
 batch_size = 32 # 32 examples in a mini-batch, smaller batch size means more updates in one epoch
 num_classes = 10 #
-epochs = 1 # repeat 200 times
+epochs = 200 # repeat 200 times
 data_augmentation = True
 
 
